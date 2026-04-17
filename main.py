@@ -20,8 +20,8 @@ expense = {
 
 expenses.append(expense)
 
-print("Expense added successfully!")
-print(expenses)
+# print("Expense added successfully!")
+# print(expenses)
 
 # Function Equivalent of the above code
 
@@ -41,3 +41,12 @@ print(expenses)
 
 with open("expenses.json", "w") as f:
     json.dump(expenses, f)
+
+print("\nAll Expenses:")
+
+for expense in expenses:
+    print(f"{expense['category']}: {expense['amount']}")
+
+total = sum(exp["amount"] for exp in expenses)
+
+print(f"\nTotal Spending: {total}")
